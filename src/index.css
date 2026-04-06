@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --bg-main: #0B0E14;
+  --accent: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.4);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background-color: #0B0E14;
+  color: #e2e8f0;
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-family: 'Outfit', sans-serif;
+  background-image: 
+    radial-gradient(ellipse at top right, rgba(99, 102, 241, 0.15), transparent 40%),
+    radial-gradient(ellipse at bottom left, rgba(168, 85, 247, 0.15), transparent 40%);
+  background-attachment: fixed;
+  margin: 0;
+}
+
+body ::selection {
+  background-color: rgba(99, 102, 241, 0.3);
+}
+
+/* Layout Structures */
+.layout-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 280px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  background-color: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+}
+
+.main-content {
+  flex: 1 1 0%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 2.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Ultra Premium Glass Panel */
+.glass {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(64px);
+  -webkit-backdrop-filter: blur(64px);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Glass Card for items */
+.glass-card {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: all 0.3s;
+}
+.glass-card:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: 0 0 20px -5px rgba(99, 102, 241, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Premium Buttons */
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+}
+.btn:active {
+  transform: scale(0.95);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: scale(1);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  box-shadow: 0 0 15px -3px rgba(99, 102, 241, 0.5);
+}
+.btn-primary:hover:not(:disabled) {
+  box-shadow: 0 0 25px -3px rgba(99, 102, 241, 0.6);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+}
+.btn-secondary:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.btn-gemini {
+  background: linear-gradient(to right, #3b82f6, #a855f7, #ec4899);
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px -5px rgba(168, 85, 247, 0.5);
+  animation: gradientShift 3s ease infinite;
+}
+.btn-gemini:hover:not(:disabled) {
+  box-shadow: 0 0 30px -5px rgba(168, 85, 247, 0.7);
+  transform: translateY(-2px);
+}
+
+/* Input fields */
+.input-field {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: #e2e8f0;
+  outline: none;
+  transition: all 0.3s;
+  font-weight: 500;
+  font-family: inherit;
+}
+.input-field::placeholder {
+  color: #475569;
+}
+.input-field:focus {
+  border-color: rgba(99, 102, 241, 0.5);
+  background-color: rgba(99, 102, 241, 0.05);
+  box-shadow: 0 0 15px -3px rgba(99, 102, 241, 0.2);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

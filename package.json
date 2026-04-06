@@ -1,0 +1,36 @@
+{
+  "name": "word-batch-gen",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "xlsx": "^0.18.5",
+    "docxtemplater": "^3.42.0",
+    "pizzip": "^3.1.4",
+    "file-saver": "^2.0.5",
+    "zustand": "^4.5.0",
+    "lucide-react": "^0.320.0",
+    "framer-motion": "^11.0.3",
+    "react-dropzone": "^14.2.3",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.1",
+    "@tauri-apps/api": "^1.5.3"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@types/file-saver": "^2.0.7",
+    "@vitejs/plugin-react": "^4.2.1",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.0",
+    "@tauri-apps/cli": "^1.5.8"
+  }
+}
